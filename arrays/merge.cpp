@@ -27,9 +27,14 @@ int main()
 {
     int n = 0, m = 0;
     std::cin >> n >> m;
+    if (n < 1 || m < 1)
+    {
+        std::cout << "Not valid array size";
+        return -1;
+    }
 
-    std::vector<int> nums1(n);
-    for (int i = 0; i < n - m; ++i)
+    std::vector<int> nums1(n + m);
+    for (int i = 0; i < n; ++i)
         std::cin >> nums1[i];
 
     std::vector<int> nums2(m);

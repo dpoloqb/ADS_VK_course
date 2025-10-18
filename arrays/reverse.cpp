@@ -21,6 +21,11 @@ int main()
 {
     int len = 0;
     std::cin >> len;
+    if (len < 1)
+    {
+        std::cout << "Not valid array size";
+        return -1;
+    }
 
     std::vector<int> arr(len);
     for (int i = 0; i < len; ++i)

@@ -21,6 +21,11 @@ int main()
 {
     int n = 0;
     std::cin >> n;
+    if (n < 1)
+    {
+        std::cout << "Not valid array size";
+        return -1;
+    }
 
     std::vector<int> nums(n);
     for (int i = 0; i < n; ++i)

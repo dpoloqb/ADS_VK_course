@@ -15,6 +15,11 @@ int main()
 {
     int len = 0;
     std::cin >> len;
+    if (len < 1)
+    {
+        std::cout << "Not valid array size";
+        return -1;
+    }
 
     std::vector<int> arr(len);
     for (int i = 0; i < len; ++i)
@@ -24,8 +29,12 @@ int main()
     std::cin >> k;
 
     reverseArray(arr, 0, len - 1);
-    reverseArray(arr, 0, (k % len) - 1);
-    reverseArray(arr, (k % len), len - 1);
+
+    if ((k % len) != 0)
+    {
+        reverseArray(arr, 0, (k % len) - 1);
+        reverseArray(arr, (k % len), len - 1);
+    }
 
     for (auto i : arr)
         std::cout << i << ' ';

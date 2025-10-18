@@ -27,6 +27,11 @@ int main()
 {
     int len = 0;
     std::cin >> len;
+    if (len < 1)
+    {
+        std::cout << "Not valid array size";
+        return -1;
+    }
 
     std::vector<int> nums(len);
     for (int i = 0; i < len; ++i)
@@ -34,6 +39,20 @@ int main()
     
     int target;
     std::cin >> target;
+
+    if (len == 1)
+    {
+        if (target == nums[0])
+        {
+            std::cout << '0' << ' ' << "0";
+            return 0;
+        }
+        else 
+        {
+            std::cout << "No numbers to make a target sum";
+            return 0;
+        }
+    }
 
     twoSum(nums, target);
 }
